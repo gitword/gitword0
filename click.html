@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="lib/angular.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="css/mystyles.css" />
+</head>
+
+<body ng-app="mainModule">
+  <div ng-controller="mainController">
+    <h3>Click me</h3>
+    <!-- <button id="firstBtn" ng-click="onFirstBtnClick()">Click me</button> -->
+	<div id="svgDiv" style='background-color:lightgreen;width:400px;height:150px;'>
+    <svg ng-attr-height="150" ng-attr-width="400" width="100%" height="100%" >     
+                    <g ng-mousemove="count=1" ng-mouseleave="count=null" ng-click="onClick(count)">
+                        <circle  r="50" cx="60" cy="60" fill="{{circleArray[0]}}"></circle>
+                        <text x="60" y="40%" dy=".3em" text-anchor="middle" fill="#FFF">N-1</text>
+                    </g>                    
+                    <g ng-mousemove="count=2" ng-mouseleave="count=null" ng-click="onClick(count)">
+                      <circle  r="50" cx="180" cy="60" fill="{{circleArray[1]}}"></circle>
+                      <text x="180" y="40%" dy=".3em" text-anchor="middle" fill="#FFF">N-2</text>
+                    </g>
+					
+					<g ng-mousemove="count=3" ng-mouseleave="count=null" ng-click="onClick(count)">
+                      <circle r="50" cx="300" cy="60" fill="{{circleArray[2]}}"></circle>
+                      <text x="300" y="40%" dy=".3em" text-anchor="middle" fill="#FFF">N-3</text>
+                    </g>
+    </svg> 
+	</div>
+    <strong>RESULT:</strong> {{count}} <br />			
+    
+  </div>
+  
+</body>
+
+</html>
